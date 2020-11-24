@@ -29,7 +29,9 @@ public class Customer {
 
         }
         System.out.printf("The account number is: %c%c-%s-%s-%s, pin code is %s%s\n", fName.charAt(0), lName.charAt(0), fName.length() + lName.length(), countFName, countLName, countFName, countLName);
+    }
 
-
+    public void addCustomer(Customer c){
+        customers.add(c);
     }
 }
