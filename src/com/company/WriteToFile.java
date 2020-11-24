@@ -3,13 +3,25 @@ package com.company;
 import java.io.FileNotFoundException;
 import java.util.Formatter;
 
-public class WriteToFile {
+public class WriteToFile{
     private static Formatter output;
 
-        private static String fileName = "customers.txt";
+    private static String fileName = "customers.txt";
+
+    public void CreateTextFile() {
+            OpenFile();
+            AddRecords();
+            CloseFile();
+    }
+    public void CreateTextFile(String _filename){
+        fileName = _filename;
+        OpenFile();
+        AddRecords();
+        CloseFile();
+    }
 
 
-        private void OpenFile() {
+    public void OpenFile() {
             try {
                 output = new Formatter(fileName);
             } catch (SecurityException securityException) {
@@ -21,13 +33,12 @@ public class WriteToFile {
             }
         }
 
-        private void AddRecords(){
-
-
+        public void AddRecords(){
+        
 
         }
 
-        private void CloseFile() {
+        public void CloseFile() {
             if (output != null) {
                 output.close();
             }
